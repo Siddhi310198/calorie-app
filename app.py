@@ -3,12 +3,12 @@ import base64
 from io import BytesIO
 from PIL import Image
 import os
-from dotenv import load_dotenv
+
 from openai import OpenAI
 
 # Load API key
-load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+client = OpenAI(api_key=st.secrets("OPENAI_API_KEY"))
 
 # Function to encode image
 def encode_image(image):
