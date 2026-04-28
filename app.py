@@ -13,7 +13,7 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 # Function to encode image
 def encode_image(image):
     buffer = BytesIO()
-    image.save(buffer, format="JPEG")
+    image.save(buffer, format="png")
     return base64.b64encode(buffer.getvalue()).decode("utf-8")
 
 # Streamlit UI
