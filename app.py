@@ -22,8 +22,8 @@ st.title("🍔 Food Calorie Estimator")
 uploaded_file = st.file_uploader("Upload a food image", type=["jpg", "jpeg", "png"])
 
 if uploaded_file:
-    image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded Image", use_column_width=True)
+    with open (uploaded_file,"rb") as image:
+        st.image(image, caption="Uploaded Image", use_column_width=True)
 
     if st.button("Analyze Food"):
         with st.spinner("Analyzing..."):
