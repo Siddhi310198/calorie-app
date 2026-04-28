@@ -8,7 +8,7 @@ from openai import OpenAI
 
 # Load API key
 
-client = OpenAI(api_key=st.secrets("OPENAI_API_KEY"))
+client = OpenAI(api_key=st.secret["OPENAI_API_KEY"])
 
 # Function to encode image
 def encode_image(image):
